@@ -7,6 +7,7 @@ const startButton = document.getElementById('startButton');
 const doorOld = document.getElementById('doorOld');
 const doorNew = document.getElementById('doorNew');
 
+const bell = new Audio('bell.mp3');
 const bgm = new Audio('mainBGM.mp3');
 bgm.loop = true;
 
@@ -73,7 +74,6 @@ function startTimer() {
         //bgm止める
         fadeOutAudio(bgm, 800); 
         //鐘の音を鳴らす
-        const bell = new Audio('bell.mp3');
         bell.volume = 1;
         bell.play();
 
@@ -154,7 +154,6 @@ onButton.addEventListener('click', () => {
   //BGM再生
   fadeInAudio(bgm, 3000);
   // 鐘の音を一度無音で再生しておく（iOS対応）
-  const bell = new Audio('bell.mp3');
   bell.volume = 0;
   bell.play().then(() => {
     bell.pause();
