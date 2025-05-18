@@ -153,6 +153,15 @@ onButton.addEventListener('click', () => {
   startButton.style.display = 'block';
   //BGM再生
   fadeInAudio(bgm, 3000);
+  // 鐘の音を一度無音で再生しておく（iOS対応）
+  const bell = new Audio('bell.mp3');
+  bell.volume = 0;
+  bell.play().then(() => {
+    bell.pause();
+    bell.currentTime = 0;
+  }).catch(err => {
+    console.warn("鐘の事前再生エラー:", err);
+  });
 });
 
 document.addEventListener('keydown', (e) => {
