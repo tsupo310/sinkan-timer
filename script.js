@@ -1,4 +1,4 @@
-let timerDuration = 15 * 60; // 15分（秒）
+let timerDuration = 0.1 * 60; // 15分（秒）
 let remainingTime = timerDuration;
 let interval = null;
 
